@@ -58,3 +58,26 @@ Double data binding: De temp a control: <input type="text" [(ngModel)]="mitexto"
 
 <button (click)="cargar()">Cargar</button>
 <p>Nombre: {{datos.name}}</p>
+
+<!--Make a h1 with the content "filtrar por ID", an input text for search by id and a submit button referending to filtrarID()-->
+<h1>filtrar por ID</h1>
+<input type="text" [(ngModel)]="id">
+<button (click)="filtrarID(id)">Filtrar</button>
+<!--make a table with the obtained data: name, surname, lastname, email, username, role-->
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Apellido2</th>
+    <th>Email</th>
+    <th>Usuario</th>
+    <th>Rol</th>
+  </tr>
+  <tr *ngFor="let v of datos">
+    <td>{{v.name}}</td>
+    <td>{{v.surname}}</td>
+    <td>{{v.lastname}}</td>
+    <td>{{v.email}}</td>
+    <td>{{v.username}}</td>
+    <td>{{v.role}}</td>
+  </tr>

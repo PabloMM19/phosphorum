@@ -18,6 +18,8 @@ export class AppComponent {
   texto: string = "textorojo";
   cuatro: number = 4;
   mitexto: string = "Mi texto";
+  // obtain the id of a user from the input of html and save it in the variable id
+  id: number = 0;
   condition: boolean = true;
   poblacion: IIndividuo[] = [
     {
@@ -83,10 +85,18 @@ export class AppComponent {
         this.datos = data;
       }
     )
+  }
 
+  // function to filter by id like the function cargar() with the name filtrarID(). the id is a number and is a variable number
+  filtrarID(id: number): void {
+    console.log("Filtrando AJAX...");
 
-
-
+    this.http.get("http://localhost:8083/user/" + id).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.datos = data;
+      }
+    )
   }
 
 }
