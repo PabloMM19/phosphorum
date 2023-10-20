@@ -1,0 +1,23 @@
+<div class="profile">
+  <div class="profile-header">
+    <img class="profile-picture" src="../../../../assets/thread.jpg" alt="Foto de perfil">
+    <h1>Hilo "{{datos.title}}"</h1>
+  </div>
+  <div class="profile-details">
+    <div class="detail">
+      <label>ID:</label>
+      <span>{{datos.id}}</span>
+    </div>
+    <div class="detail">
+      <label>Título</label>
+      <span>{{datos.title}}</span>
+    </div>
+    <div class="detail">
+      <label>Usuario</label>
+      <span><a class="link" [routerLink]="['/admin', 'user', 'view', datos.user.id]">{{datos.user.username}}</a></span>
+    </div>
+  </div>
+</div>
+<div class="center-button">
+<a class="buttonList" [routerLink]="['/admin', 'thread', 'plist']">Volver a la lista completa</a>
+</div>

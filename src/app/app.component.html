@@ -1,31 +1,5 @@
 
-<!--Make a h1 with the content "filtrar por ID", an input text for search by id and a submit button referending to filtrarID()-->
-<h1>Filtrar usuarios por ID</h1>
-<div id="form">
-<input type="text" [(ngModel)]="id">
-<button (click)="filtrarID(id)">Buscar</button>
-</div>
-<!--make a table with the obtained data: name, surname, lastname, email, username, role-->
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Apellido2</th>
-    <th>Email</th>
-    <th>Usuario</th>
-    <th>Rol</th>
-    <th>Hilos</th>
-    <th>Respuestas</th>
-  </tr>
-  <tr *ngIf="(datos.id) != null">
-    <td>{{datos.id}}</td>
-    <td>{{datos.name}}</td>
-    <td>{{datos.surname}}</td>
-    <td>{{datos.lastname}}</td>
-    <td>{{datos.email}}</td>
-    <td>{{datos.username}}</td>
-    <td>{{datos.role}}</td>
-    <td>{{datos.threads}}</td>
-    <td>{{datos.replies}}</td>
-  </tr>
+<app-menu-unrouted></app-menu-unrouted>
+
+<router-outlet></router-outlet>
+

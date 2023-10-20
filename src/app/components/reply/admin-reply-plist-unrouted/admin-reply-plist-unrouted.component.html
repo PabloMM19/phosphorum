@@ -1,0 +1,32 @@
+<div class="card" style="margin-top: 2%;">
+  <p-table [value]="datos.content" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th (click)="doOrder('id')">ID</th>
+        <th (click)="doOrder('title')">Título</th>
+        <th (click)="doOrder('body')">Mensaje</th>
+        <th (click)="doOrder('user')">Usuario</th>
+        <th (click)="doOrder('thread')">Hilo</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-r>
+      <tr>
+        <td>{{r.id}}</td>
+        <td>{{r.title}}</td>
+        <td>{{r.body}}</td>
+        <td><a [routerLink]="['/admin','user','view',r.user.id]">{{r.user.username}}</a></td>
+        <td><a [routerLink]="['/admin','thread','view',r.thread.id]">{{r.thread.title}}</a></td>
+        <td>
+          <a [routerLink]="['/admin','reply','view',r.id]">Ver respuesta</a>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<br>
+<h4 style="text-align: center;">Mostrando {{datos.numberOfElements}} registros de {{datos.totalElements}} totales</h4>
+<div class="card flex justify-content-center">
+  <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+    [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+</div>
