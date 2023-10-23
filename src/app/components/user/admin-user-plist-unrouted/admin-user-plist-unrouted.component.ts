@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { PaginatorState } from 'primeng/paginator';
 
 
 interface PageEvent {
@@ -17,7 +18,7 @@ interface PageEvent {
 export class AdminUserPlistUnroutedComponent implements OnInit {
 
   datos: any = [];
-
+  oPage: any = [];
 
   first: number = 0;
   rows: number = 10;
@@ -25,6 +26,7 @@ export class AdminUserPlistUnroutedComponent implements OnInit {
 
   orderField: string = "id";
   orderDirection: string = "asc";
+  oPaginatorState: PaginatorState = { first: 0, rows: 10, page: 0, pageCount: 0 };
 
   constructor(
     private oHttpClient: HttpClient
