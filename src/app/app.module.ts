@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginatorModule } from 'primeng/paginator';
 import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { AdminThreadPlistUnroutedComponent } from './components/thread/admin-thread-plist-unrouted/admin-thread-plist-unrouted.component';
 import { AdminThreadPlistRoutedComponent } from './components/thread/admin-thread-plist-routed/admin-thread-plist-routed.component';
 import { AdminReplyPlistRoutedComponent } from './components/reply/admin-reply-plist-routed/admin-reply-plist-routed.component';
@@ -41,7 +42,8 @@ import { AdminReplyPlistUnroutedComponent } from './components/reply/admin-reply
     AdminThreadPlistRoutedComponent,
     AdminThreadPlistUnroutedComponent,
     AdminReplyPlistUnroutedComponent,
-    AdminReplyPlistRoutedComponent
+    AdminReplyPlistRoutedComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { AdminReplyPlistUnroutedComponent } from './components/reply/admin-reply
     BrowserAnimationsModule,
     PaginatorModule,
     TableModule,
-    MenubarModule
+    MenubarModule,
+    DynamicDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

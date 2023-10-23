@@ -23,7 +23,7 @@
         <td *ngIf="u.role==0">Admin</td>
         <td *ngIf="u.role==1">User</td>
         <td>
-          <a [routerLink]="['/admin','user','view',u.id]">Ver usuario</a>
+          <button [routerLink]="['/admin','user','view',u.id]" class="btn btn-primary">Ver usuario</button>
         </td>
       </tr>
     </ng-template>
